@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 @Component({
   selector: 'app-root',
@@ -6,29 +9,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'table';
 
-   firstname ="babita"
-   lastname = "chaturvedi"
-
-
-   // array of object 
-   memberData  = [
+  
+   constructor( private dialog :MatDialog)
+   {
+   }
 
 
-    
-    {name:"babita" ,email :"baita@gmail.com"},
-    {name:"kuttu" ,email :"kuttu@gmail.com"},
-    {name:"neelam" ,email :"neelam@gmail.com"},
-    {name:"shivanand" ,email :"shivanand@gmail.com"},
-    {name:"swaraj" ,email :"swaraj@gmail.com"},
-    {name:"xyc" ,email :"xyc@gmail.com"}
+   openDialog() {
+    this.dialog.open(DialogComponent, {
+      
+      width :'30%'
 
-     
-   ]
+
+    });
+  }
+} 
+   
 
 
 
 
 
-}
+
